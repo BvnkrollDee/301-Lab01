@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './header';
-import Footer from './footer';
+import Footer from './footer';                
 import Main from './main';
 
+{/*Lines 1 -5 are just importing external files into this file.*/}
 
 function App() {
   return (
