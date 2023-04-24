@@ -3,14 +3,37 @@ import './App.css';
 import Header from './header';
 import Footer from './footer';                
 import Main from './main';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import SelectedBeast from './selectedBeast';
+
 
 {/*Lines 1 -5 are just importing external files into this file.*/}
 
 function App() {
+const [displaySelectedBeast, setDisplaySelectedBeast] = useState(false);
+const [currentSelectedBeast, setCurrentSelecetedBeast] = useState(undefined) /* Creating a state to update the app through the hornedBeast component */
+
+let selectedBeastHTML = <SelectedBeast/>
+if (displaySelectedBeast === false){
+  selectedBeastHTML = <div></div>
+}
+
   return (
+
     <div className="App">
       <Header/>
-      <Main/>
+      {/* {displaySelectedBeast === true ? <selectedBeast/> : <></>} */}
+      {displaySelectedBeast === true ? <SelectedBeast currentSelectedBeast={currentSelectedBeast} updateFunction={setDisplaySelectedBeast}/> : <></>}   {/*this is my comment*/}
+      <Button onClick = {() => {
+        if(displaySelectedBeast === true){                              {/* creating an if statement in order to display the beast that was selected*/}
+          setDisplaySelectedBeast(false)
+        }else{
+          setDisplaySelectedBeast(true)
+        }
+      }
+      }>Display Beast</Button>
+      <Main updateFunction={setDisplaySelectedBeast} beastUpdateFunction={setCurrentSelecetedBeast}/>       {/*updating the state in the main component */}
       <Footer/>
     </div>
   );
