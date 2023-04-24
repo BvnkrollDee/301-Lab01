@@ -9,7 +9,7 @@ function HornedBeast(props) {
         <h2>{props.title}</h2>   {/*all of these are accessing the properties in the HornedBeast and putting them where they need to be */}
        <img onClick = {()=> {
         props.updateFunction(true)
-       props.beastUpdateFunction({title:props.title, imageUrl:props.imageUrl ,description:props.description})  {/* updating the state of the app through horned beast  */}
+       props.beastUpdateFunction({title:props.title, imageUrl:props.imageUrl ,description:props.description})  /* updating the state of the app through horned beast*/
         setClicks(clicks + 1)
         }} src={props.imageUrl} alt={props.keyword} title={props.title} width="300px"/> {/* added the attribute onClick and made the function for them to increase by one every time that the image is clicked on.  */}
        <p>{props.description}</p>

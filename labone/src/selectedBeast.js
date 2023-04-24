@@ -14,7 +14,7 @@ export default function SelectedBeast(props) {
     // const handleShow = () => setShow(true);
     console.log(show)
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleClose}>                            {/*This is simply just the structure of the modal. and I'm just passing in the props where they belong. */}
         <Modal.Header closeButton>
           <Modal.Title>{props.currentSelectedBeast.title}</Modal.Title>
         </Modal.Header>

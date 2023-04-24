@@ -12,7 +12,7 @@ import SelectedBeast from './selectedBeast';
 
 function App() {
 const [displaySelectedBeast, setDisplaySelectedBeast] = useState(false);
-const [currentSelectedBeast, setCurrentSelecetedBeast] = useState(undefined)
+const [currentSelectedBeast, setCurrentSelecetedBeast] = useState(undefined) /* Creating a state to update the app through the hornedBeast component */
 
 let selectedBeastHTML = <SelectedBeast/>
 if (displaySelectedBeast === false){
@@ -26,14 +26,14 @@ if (displaySelectedBeast === false){
       {/* {displaySelectedBeast === true ? <selectedBeast/> : <></>} */}
       {displaySelectedBeast === true ? <SelectedBeast currentSelectedBeast={currentSelectedBeast} updateFunction={setDisplaySelectedBeast}/> : <></>}   {/*this is my comment*/}
       <Button onClick = {() => {
-        if(displaySelectedBeast === true){
+        if(displaySelectedBeast === true){                              {/* creating an if statement in order to display the beast that was selected*/}
           setDisplaySelectedBeast(false)
         }else{
           setDisplaySelectedBeast(true)
         }
       }
       }>Display Beast</Button>
-      <Main updateFunction={setDisplaySelectedBeast} beastUpdateFunction={setCurrentSelecetedBeast}/>
+      <Main updateFunction={setDisplaySelectedBeast} beastUpdateFunction={setCurrentSelecetedBeast}/>       {/*updating the state in the main component */}
       <Footer/>
     </div>
   );
